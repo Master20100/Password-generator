@@ -32,9 +32,13 @@ if(numeric_pass){
 var specchar_pass = confirm("include special characters ?");
 if(specchar_pass){
     dict_modified = dict_modified.concat(special_char);
+    alert(dict_modified);
+}
+if(dict_modified[0]===undefined){
+    alert("please select at least 1 password type");
+    gen_pass();
 }
 
-alert(dict_modified);
 for (var x = 0; x < pass_length; x++) {
      
 
