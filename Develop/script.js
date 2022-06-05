@@ -1,7 +1,23 @@
-document.getElementById("gen_pass_button").addEventListener("click", gen_pass);
+// Assignment code here
 
 
-function gen_pass(){ //this is the function for password generation
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
+function generatePassword(){ //this is the function for password generation
 
     //4 arrays were created that include which password types the user wants to select
     //the first is only numbers, the second is uppercase letters,
@@ -27,7 +43,7 @@ var pass_length = parseInt(prompt("please input password length between 8 and 12
 //return Nan that is false, so the user will get an alert then the program will start again.
 if(!pass_length){
     alert("please enter a valid number between 8 and 128 characters");
-    gen_pass();
+    generatePassword();
 }
 //if less than 8 or greater the 128, an alert is given to the user to indicate that he did not 
 //enter a correct number, then the whole program starts again. otherwise, the user keeps getting
@@ -35,7 +51,7 @@ if(!pass_length){
 
 if (pass_length <8 || pass_length>128) {
     alert("password length should between 8 and 128 characters, please enter a number within range");
-    gen_pass();
+    generatePassword();
 }
 else{
 
@@ -60,7 +76,7 @@ if(specchar_pass){
 //program restarts again.
 if(dict_modified[0]===undefined){
     alert("please select at least 1 password type");
-    gen_pass();
+    generatePassword();
 }
 
 
@@ -72,6 +88,6 @@ if(dict_modified[0]===undefined){
 for (var x = 0; x < pass_length; x++) {
 password+=dict_modified[Math.floor(Math.random() * (dict_modified.length))];
 }
-alert(password);
 }
+return password;
 }
