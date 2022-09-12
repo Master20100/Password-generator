@@ -1,4 +1,4 @@
-# Assignment_3
+# Password generator
 generatePassword(){ //this is the function for password generation
 
 4 arrays will be created that include which password types the user wants to select
