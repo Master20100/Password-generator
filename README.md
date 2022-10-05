@@ -1,4 +1,4 @@
-# Assignment_3
+# Password generator
 generatePassword(){ //this is the function for password generation
 
 4 arrays will be created that include which password types the user wants to select
@@ -28,3 +28,6 @@ and with each character, a random number that is within range of the length of t
 types is generated then we put this number as an index in the customised dict_modified to get the 
 equivalent value, then we keep adding to the password string until we get the number of characters
 requested by the user. After generating the password, we run the write password function that displays it in the text box.
+
+live link: https://master20100.github.io/Password-generator/
+github link: https://github.com/Master20100/Password-generator
